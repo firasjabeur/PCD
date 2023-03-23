@@ -6,7 +6,7 @@ import com.projet.pcd.model.Product;
 import java.util.Iterator;
 import java.util.List;
 import org.springframework.stereotype.Service;
-
+@Service
 public class CategoryService implements CategoryInterfaceService {
     private CategoryRepository cc;
 
