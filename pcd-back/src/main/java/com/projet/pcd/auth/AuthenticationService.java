@@ -4,8 +4,8 @@ import com.projet.pcd.config.JwtService;
 import com.projet.pcd.token.Token;
 import com.projet.pcd.token.TokenRepository;
 import com.projet.pcd.token.TokenType;
-import com.projet.pcd.user.Role;
-import com.projet.pcd.user.UserRepository;
+import com.projet.pcd.model.Role;
+import com.projet.pcd.model.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -22,7 +22,7 @@ public class AuthenticationService {
   private final AuthenticationManager authenticationManager;
 
   public AuthenticationResponse register(RegisterRequest request) {
-    var user = com.projet.pcd.user.Client.builder()
+    var user = com.projet.pcd.model.Client.builder()
         .nom(request.getNom())
         .prenom(request.getPrenom()).adresse(request.getAddresse()).tel(request.getTel())
         .email(request.getEmail())
@@ -54,7 +54,7 @@ public class AuthenticationService {
         .build();
   }
 
-  private void saveUserToken( com.projet.pcd.user.Client client, String jwtToken) {
+  private void saveUserToken(com.projet.pcd.model.Client client, String jwtToken) {
     var token = Token.builder()
         .client(client)
         .token(jwtToken)
@@ -65,7 +65,7 @@ public class AuthenticationService {
     tokenRepository.save(token);
   }
 
-  private void revokeAllUserTokens(com.projet.pcd.user.Client client) {
+  private void revokeAllUserTokens(com.projet.pcd.model.Client client) {
     var validUserTokens = tokenRepository.findAllValidTokenByUser(client.getId());
     if (validUserTokens.isEmpty())
       return;

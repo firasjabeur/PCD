@@ -8,14 +8,18 @@ import { InscriptionComponent } from './pages/inscription/inscription.component'
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import { HomeComponent } from './pages/home/home.component'
+import { HomeComponent } from './pages/home/home.component';
+import { MenuComponent } from './component/menu/menu.component';
+import { ProduitComponent } from './component/produit/produit.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     InscriptionComponent,
-    HomeComponent
+    HomeComponent,
+    MenuComponent,
+    ProduitComponent
   ],
   imports: [
     BrowserModule,

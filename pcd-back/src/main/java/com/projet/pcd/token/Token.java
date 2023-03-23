@@ -36,5 +36,5 @@ public class Token {
 
   @ManyToOne
   @JoinColumn(name = "user_id")
-  public com.projet.pcd.user.Client client;
+  public com.projet.pcd.model.Client client;
 }

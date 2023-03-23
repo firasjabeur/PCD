@@ -1,6 +1,6 @@
 package com.projet.pcd.config;
 
-import com.projet.pcd.user.UserRepository;
+import com.projet.pcd.model.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

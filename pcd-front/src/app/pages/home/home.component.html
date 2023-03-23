@@ -6,42 +6,40 @@
         <li><a href="#">Accueil</a></li>
         <li><a href="#">Produits</a></li>
         <li><a href="#">Panier</a></li>
+        <li><a href="#">Catégorie</a></li>
       </ul>
     </nav>
     <div class="search-bar col-md-8">
-      <input type="text" placeholder="Recherche...">
+      <input type="text" [(ngModel)]="texte" class="form-control" placeholder="Recherche...">
       <button type="submit">Recherche</button>
     </div>
   </header>
 
-  <main>
-    <div class="card product-card">
-      <img src="../../../assets/product1.jpg" alt="product-image">
-      <h2>Nom du produit</h2>
-      <p>Description du produit.</p>
-      <div class="card-buttons">
-        <button class="add-to-cart">Ajouter au panier</button>
-        <button class="remove-from-cart">Supprimer</button>
-      </div>
+ 
+
+  <div class="main-container">
+    <div class="row min-height-600 no-flex-wrap">
+        <div class="card col col-md-2 mr ">
+            <div class="col">
+                <div>
+             
+                    <h4 >Nom du boutique</h4>
+                </div>
+                <div class="aa">
+                    <app-menu></app-menu>
+                </div>
+            </div>
+        </div>
+        <div class="card col col-md-10 pr-0 pl-0 background-grey border-none">
+            <div class="col pl-0 pr-0 d-flex flex-column justify-content-between">
+                <div class="card p-3 min-height-80 mb-2">
+                  <h4>Bienvenue dans notre boutique en ligne ! Nous sommes ravis de vous accueillir ici et nous espérons que vous trouverez ce que vous cherchez</h4>
+                </div>
+                <div class="card mb-2" style="min-height: 580px;">
+                    <app-produit></app-produit>
+                </div>
+                
+            </div>
+        </div>
     </div>
-    
-    <div class="card product-card">
-      <img src="../../../assets/product1.jpg" alt="product-image">
-      <h2>Nom du produit</h2>
-      <p>Description du produit.</p>
-      <div class="card-buttons">
-        <button class="add-to-cart">Ajouter au panier</button>
-        <button class="remove-from-cart">Supprimer</button>
-      </div>
-    </div>
-    <div class="card product-card">
-      <img src="../../../assets/product1.jpg" alt="product-image">
-      <h2>Nom du produit</h2>
-      <p>Description du produit.</p>
-      <div class="card-buttons">
-        <button class="add-to-cart ">Ajouter au panier  </button>
-        <button class="remove-from-cart">Supprimer</button>
-      </div>
-    </div>
-  </main>
-</body>
+</div>

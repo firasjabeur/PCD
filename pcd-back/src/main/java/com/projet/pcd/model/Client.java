@@ -1,4 +1,4 @@
-package com.projet.pcd.user;
+package com.projet.pcd.model;
 
 import com.projet.pcd.token.Token;
 import jakarta.persistence.Entity;
