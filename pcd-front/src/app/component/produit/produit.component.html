@@ -1,16 +1,114 @@
 <main>
     <div class="card product-card" *ngFor="let p of produitF">
-      <img src="../../../assets/product1.jpg" alt="product-image">
+      <img src="http://localhost:8080/apiproduit/getimage/{{p.id}}" alt="product-image">
       <h2>{{p.nom}}</h2>
       <h3 style="color:red">{{p.prix}} DT</h3>
-      <h6 style="color: green" *ngIf="p.quantite>0; else repture">
+      <h6 style="color: green" *ngIf="p.quantite>0; ">
+        En Stock
+      </h6>
+      
+      <p>Description du produit.</p>
+      <div class="card-buttons">
+        <button class="add-to-cart" >Ajouter au panier</button>
+        <button class="remove-from-cart" (click)=delete(p)>Supprimer</button>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="card product-card" >
+      <img src="../../../assets/product1.jpg" alt="product-image">
+      <h2>nom du produit</h2>
+      
+      <h6 >
         En Stock
       </h6>
       <p>Description du produit.</p>
       <div class="card-buttons">
-        <button class="add-to-cart" (click)="openDialogUpdate(p.id)">Ajouter au panier</button>
+        <button class="add-to-cart" >Ajouter au panier</button>
         <button class="remove-from-cart" (click)=delete(p)>Supprimer</button>
       </div>
     </div>
+    <div class="card product-card" >
+      <img src="../../../assets/product1.jpg" alt="product-image">
+      <h2>nom du produit</h2>
+      
+      <h6 >
+        En Stock
+      </h6>
+      <p>Description du produit.</p>
+      <div class="card-buttons">
+        <button class="add-to-cart" >Ajouter au panier</button>
+        <button class="remove-from-cart" (click)=delete(p)>Supprimer</button>
+      </div>
+    </div>
+    <div class="card product-card" >
+      <img src="../../../assets/product1.jpg" alt="product-image">
+      <h2>nom du produit</h2>
+      
+      <h6 >
+        En Stock
+      </h6>
+      <p>Description du produit.</p>
+      <div class="card-buttons">
+        <button class="add-to-cart" >Ajouter au panier</button>
+        <button class="remove-from-cart" (click)=delete(p)>Supprimer</button>
+      </div>
+    </div>
+    <div class="card product-card" >
+      <img src="../../../assets/product1.jpg" alt="product-image">
+      <h2>nom du produit</h2>
+      
+      <h6 >
+        En Stock
+      </h6>
+      <p>Description du produit.</p>
+      <div class="card-buttons">
+        <button class="add-to-cart" >Ajouter au panier</button>
+        <button class="remove-from-cart" (click)=delete(p)>Supprimer</button>
+      </div>
+    </div>
+    <div class="card product-card" >
+      <img src="../../../assets/product1.jpg" alt="product-image">
+      <h2>nom du produit</h2>
+      
+      <h6 >
+        En Stock
+      </h6>
+      <p>Description du produit.</p>
+      <div class="card-buttons">
+        <button class="add-to-cart" >Ajouter au panier</button>
+        <button class="remove-from-cart" (click)=delete(p)>Supprimer</button>
+      </div>
+    </div>
+    <div class="card product-card" >
+      <img src="../../../assets/product1.jpg" alt="product-image">
+      <h2>nom du produit</h2>
+      
+      <h6 >
+        En Stock
+      </h6>
+      <p>Description du produit.</p>
+      <div class="card-buttons">
+        <button class="add-to-cart" >Ajouter au panier</button>
+        <button class="remove-from-cart" (click)=delete(p)>Supprimer</button>
+      </div>
+    </div>
+    <div class="card product-card" >
+      <img src="../../../assets/product1.jpg" alt="product-image">
+      <h2>nom du produit</h2>
+      
+      <h6 >
+        En Stock
+      </h6>
+      <p>Description du produit.</p>
+      <div class="card-buttons">
+        <button class="add-to-cart" >Ajouter au panier</button>
+        <button class="remove-from-cart" (click)=delete(p)>Supprimer</button>
+      </div>
+    </div>
+
     
   </main>

@@ -1,0 +1,57 @@
+<div class="col">
+    <div class="col-md-12 mb-3">
+        <img src="assets/produit.png" class="rounded-circle" width="200px" height="200px">
+
+    </div>
+    <div class="col-md-12">
+        <div class="col-md-12">
+            <h2><i class="fa-solid fa-circle-info blue-color"></i>&nbsp;Information de l'article</h2>
+        </div>
+        <div class="col-md-12 ">
+
+            <form #produitForm="ngForm" (submit)="addProduit()">
+                <div class="row mb-3">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Nom" [(ngModel)]="p.nom"
+                        required>
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Prix" [(ngModel)]="p.prix" required>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Quantité" [(ngModel)]="p.quantite" required>
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Taux TVA">
+                    </div>
+                </div>
+
+                
+                    <div class="col">
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Séléctionner une categorie</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                    </div>
+                    <div class="row mb-3">
+                        <div>
+                            <label for="photo">Photo</label>
+                            <input #myInput type="file" id="photo" name="photo" (change)="onPhotoSelected($event)" [(ngModel)]="photo" required>
+                          </div>
+                    </div>
+                
+            
+            
+       
+
+    <div class="col-md-12 text-end">
+        <button class="btn btn-danger me-3"><i class="fa-solid fa-ban"></i>&nbsp;Annuler</button>
+        <button class="btn btn-primary" type="submit"  href="/liste" (click)="addProduit()"><i class="fa-solid fa-save"></i>&nbsp;Enregistrer</button>
+    </div>
+</form>
+</div>

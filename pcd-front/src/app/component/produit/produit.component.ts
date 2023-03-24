@@ -1,8 +1,8 @@
 
 import { HttpErrorResponse } from '@angular/common/http';
 import { NonNullAssert } from '@angular/compiler';
-import { Component, OnInit } from '@angular/core';
-import {MatDialog} from '@angular/material';
+
+
 
 import { FormGroup, NgForm } from '@angular/forms';
 import { CategorieService } from 'src/app/services/categorie.service';
@@ -10,10 +10,10 @@ import { Categorie } from 'src/app/categorie';
 import { Produit } from 'src/app/produit';
 import { ProduitService } from 'src/app/services/produit.service';
 import Swal from 'sweetalert2';
+import { Component, OnInit } from '@angular/core';
 
-import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
-import { DetailsComponent } from '../details/details.component';
-
+            
+       
 
 @Component({
   selector: 'app-produit',
@@ -61,7 +61,7 @@ export class ProduitComponent implements OnInit {
   {
    return this.produits.filter(x=>x.nom.indexOf(mot)!=-1)
   }
-   constructor(private service:ProduitService,private sc:CategorieService,public dialog:MatDialog) { }
+   constructor(private service:ProduitService,private sc:CategorieService) { }
  getAll()
  {
    this.service.getAllProducts().subscribe(data=>{this.produits=data; this.produitF=this.produits})
@@ -108,7 +108,7 @@ export class ProduitComponent implements OnInit {
      confirmButtonText: 'Yes, delete it!',
      cancelButtonText: 'No, cancel!',
      reverseButtons: true
-   }).then((result: { isConfirmed: any; dismiss: any; }) => {
+   }).then((result) => {
      if (result.isConfirmed) {
        this.service.delete(p.id).subscribe(()=>
        {this.produitF.splice(this.produitF.indexOf(p),1);
@@ -151,7 +151,7 @@ deletecat(cat:Categorie)
      confirmButtonText: 'Yes, delete it!',
      cancelButtonText: 'No, cancel!',
      reverseButtons: true
-   }).then((result: { isConfirmed: any; dismiss: any; }) => {
+   }).then((result) => {
      if (result.isConfirmed) {
        this.sc.deletecat(cat.id).subscribe(()=>
        {this.categories.splice(this.categories.indexOf(cat),1);
@@ -186,39 +186,7 @@ getCategoryById(id:number){
  onPhotoSelected(event: any) {
   this.photo = event.target.files[0];
 }
-updateProduit(): void {
-   this.getCategoryById(this.id);
-   
-   
-  // const pp:string="{\"nom\":\""+this.p.nom+
-  //   "\",\"prix\":"+this.p.prix+",\"quantite\":"+this.p.quantite+",\"prix_achat\":"+this.p.prix_achat+
-  //   ",\"categorie\":{\"id\":"+this.p.categorie.id+" ,\"nom\":\""+this.p.categorie.nom+"\"}}";
-    
- this.service.updateProduct(this.photo,this.prod).subscribe(
-    response => {
-      console.log(response);
-      //console.log(JSON.stringify(this.newProduit));
-      console.log(this.prod);
-      
-      // Vider le formulaire et recharger la liste des produits
-      this.prod = {
-        id: '',
-        nom: '',
-        prix: 0,
-        quantite: 0,
-        photo: "",
-    categorie: {id:0,nom:""},
-    prix_achat:0
-      };
-     this.photo=new File([], '');
 
-
-      // Charger la liste des produits
-      // this.listeProduits = this.serviceProduit.getListeProduits();
-    },
-   
-  );
-}
 
  selectCat(event:any){
 
@@ -237,18 +205,8 @@ this.sc.getCategory(this.id).subscribe(data=>{this.categorie=data;  this.cat.id=
  
 
   }
- openDialog(){
-  let dialogRef = this.dialog.open(DialogBoxComponent, {
-    width: '250px'
-  });
-}
-openDialogUpdate(id:string){
-  let dialogRef = this.dialog.open(DetailsComponent, {
-    width: '250px',
-    data: {id}
-    
-  });
-}
+
+
 createNewCategory() {
   if (this.nomNewCat=='') {
       alert("Name cannot be empty.");

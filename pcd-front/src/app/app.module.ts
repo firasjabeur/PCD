@@ -10,7 +10,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './pages/home/home.component';
 import { MenuComponent } from './component/menu/menu.component';
-import { ProduitComponent } from './component/produit/produit.component'
+import { ProduitComponent } from './component/produit/produit.component';
+import { AjoutProduitComponent } from './component/ajout-produit/ajout-produit.component'
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ProduitComponent } from './component/produit/produit.component'
     InscriptionComponent,
     HomeComponent,
     MenuComponent,
-    ProduitComponent
+    ProduitComponent,
+    AjoutProduitComponent
   ],
   imports: [
     BrowserModule,
