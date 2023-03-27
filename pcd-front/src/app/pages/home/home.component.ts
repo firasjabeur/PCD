@@ -11,8 +11,11 @@ export class HomeComponent {
     private router: Router
   ){}
 
+  
+
   nouvelArticle(): void {
     this.router.navigate(['/home/ajoutproduit']);
   }
 
+ 
 }

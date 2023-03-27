@@ -1,0 +1,29 @@
+<div>
+  
+    <div class="category"  (click)="selectCategorie($event)" *ngFor="let cat of categories" >
+      <img src="https://via.placeholder.com/200x150.png?text=Categorie+1" alt="Catégorie 1">
+      <h2>{{ cat.nom }}</h2>
+      
+        <div class="d-grid gap-2 mt-4">
+      <button class="btn btn-danger " (click)="deletecat(cat)"><i class="fa-solid fa-ban"></i>&nbsp;Supprimer</button>
+        </div>
+     
+    </div>
+  
+    <div class="category">
+      <img src="https://via.placeholder.com/200x150.png?text=Categorie+2" alt="Catégorie 2">
+      <h2>Catégorie 2</h2>
+    </div>
+  
+    <div class="category">
+      <img src="https://via.placeholder.com/200x150.png?text=Categorie+3" alt="Catégorie 3">
+      <h2>Catégorie 3</h2>
+    </div>
+  
+    <div class="category1" >
+        <button (click)="nouvellecategorie()">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAP1BMVEX///8AAABsbGx+fn6UlJRISEiYmJje3t7q6uq7u7vY2NjS0tIzMzNJSUnk5OTt7e1gYGB1dXWnp6eHh4c+Pj5VCXQsAAACgklEQVR4nO3b3Y6qQBBFYVFBUfAH5v2f9QTwYqaSjt0FnN7i+q6bUCsz4cau3Q4AAAAAAAAAgNnOdXV8r6rPuQd1urRFrPaSe1iPKrpvUOUeN11a4AcmXhMDi+Kae+RE5TR205bvtM10tMw9cprT1HeLOnybGk8rz7Ssbpz5Hnn6Pp7uVp1oaf0w8iP6+GM43q84z/IOw8j76OP74fhhxXmWR6FBoSAKDQoFUWhQKIhCg0JBFBoUCqLQoFAQhQaFgig0KBREoUGhIAoNCgVRaFAoiEKDQkEUGhQKotCgUBCFBoWCKDQoFEShQeGaTl1/cPhxFP54XtR385YYrq/FEJ/EQq9yxrZN6u5SnsIZO1MzA4tn9JueM9/kTLzMfG3Cms9p7qt8+4uvBcnH3ueZ8gk4PZ1veUxDtp7A8/hoE7u7lMt9WgvzLNrW45Nx22c53cY5a8eT43emWXyg5Y1/RM+35uj+//7Pxu/F0fHgWPgJi50lhSEUyqAwiEIZFAZRKIPCIAplUBhEoQwKgyiUQWEQhTIoDKJQBoVBFMqgMIhCGRQGfUnhpn8D3v7v+Nu/i7H9+zTbvxP1Bffatn838Qvul37BHeHd9u95u33QXX0nCg0KBVFoUCiIQoNCQRQaFAqi0KBQEIUGhYIoNCgURKFBoSAKDQoFUWhQKIhCg0JBFBoUCqLQoFAQhQaFgig0KBREoUGhIAoNCgX1w8iP6OPj5ku/4jzL64aRi9idqft4ult1oqVNaz5N3ObbbVrOyrRW4PVaRWna8p126vuIddXfrkWqeZsvGaTuTM3YXcolLfEDA3e7Sxvd1zr3B7M719Xxvap2rbgCAAAAAAAAAPDXP+cBHr3eg1YJAAAAAElFTkSuQmCC" alt="Catégorie 4">
+     
+    </button>
+    </div>
+</div>

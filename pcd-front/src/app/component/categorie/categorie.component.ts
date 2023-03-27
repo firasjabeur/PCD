@@ -1,27 +1,23 @@
-
-import { HttpErrorResponse } from '@angular/common/http';
-import { NonNullAssert } from '@angular/compiler';
-
-
-
-import { FormGroup, NgForm } from '@angular/forms';
-import { CategorieService } from 'src/app/services/categorie.service';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Categorie } from 'src/app/categorie';
 import { Produit } from 'src/app/produit';
+import { CategorieService } from 'src/app/services/categorie.service';
 import { ProduitService } from 'src/app/services/produit.service';
 import Swal from 'sweetalert2';
-import { Component, Input, OnInit } from '@angular/core';
-
-            
-       
 
 @Component({
-  selector: 'app-produit',
-  templateUrl: './produit.component.html',
-  styleUrls: ['./produit.component.scss']
+  selector: 'app-categorie',
+  templateUrl: './categorie.component.html',
+  styleUrls: ['./categorie.component.scss']
 })
-export class ProduitComponent implements OnInit {
-  
+export class CategorieComponent {
+ 
+
+  nouvellecategorie(): void {
+    this.router.navigate(['home/ajoutcategorie'])
+  }
+
   produits!: Produit[] ;
   public isCollapsed = false;
   public isCollapsed2 = false;
@@ -67,7 +63,7 @@ export class ProduitComponent implements OnInit {
 
 
 
-   constructor(private service:ProduitService,private sc:CategorieService) { }
+   constructor(private service:ProduitService,private sc:CategorieService, private router: Router) { }
  getAll()
  {
    this.service.getAllProducts().subscribe(data=>{this.produits=data; this.produitF=this.produits})
@@ -228,19 +224,5 @@ createNewCategory() {
        this.catadded=true;
           this.nomNewCat = "";},);
 }
-
-showDescription(): void {
-  const description = document.getElementById("description");
-  if (description !== null) {
-    if (description.style.display === "none") {
-      description.style.display = "block";
-    } else {
-      description.style.display = "none";
-    }
-  }
-}
-
-
-
 
 }

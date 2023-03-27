@@ -11,7 +11,9 @@ import {HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './pages/home/home.component';
 import { MenuComponent } from './component/menu/menu.component';
 import { ProduitComponent } from './component/produit/produit.component';
-import { AjoutProduitComponent } from './component/ajout-produit/ajout-produit.component'
+import { AjoutProduitComponent } from './component/ajout-produit/ajout-produit.component';
+import { CategorieComponent } from './component/categorie/categorie.component';
+import { AjoutCategorieComponent } from './component/ajout-categorie/ajout-categorie.component'
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { AjoutProduitComponent } from './component/ajout-produit/ajout-produit.c
     HomeComponent,
     MenuComponent,
     ProduitComponent,
-    AjoutProduitComponent
+    AjoutProduitComponent,
+    CategorieComponent,
+    AjoutCategorieComponent
   ],
   imports: [
     BrowserModule,

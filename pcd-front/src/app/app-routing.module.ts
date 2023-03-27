@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AjoutCategorieComponent } from './component/ajout-categorie/ajout-categorie.component';
 import { AjoutProduitComponent } from './component/ajout-produit/ajout-produit.component';
+import { CategorieComponent } from './component/categorie/categorie.component';
 import { ProduitComponent } from './component/produit/produit.component';
 import { HomeComponent } from './pages/home/home.component';
 import { InscriptionComponent } from './pages/inscription/inscription.component';
@@ -26,7 +28,16 @@ const routes: Routes = [
       {
         path: 'ajoutproduit',
         component: AjoutProduitComponent
+      },
+      {
+        path: 'categorie',
+        component: CategorieComponent
+      },
+      {
+        path: 'ajoutcategorie',
+        component: AjoutCategorieComponent
       }
+
     ]
   }
 ];
