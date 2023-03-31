@@ -10,7 +10,8 @@ import { Categorie } from 'src/app/categorie';
 import { Produit } from 'src/app/produit';
 import { ProduitService } from 'src/app/services/produit.service';
 import Swal from 'sweetalert2';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, Renderer2, ViewEncapsulation } from '@angular/core';
+import { HtmlService } from 'src/app/html.service';
 
             
        
@@ -18,9 +19,12 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-produit',
   templateUrl: './produit.component.html',
-  styleUrls: ['./produit.component.scss']
+  styleUrls: ['./produit.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ProduitComponent implements OnInit {
+
+  htmlCode!: string;
   
   produits!: Produit[] ;
   public isCollapsed = false;
@@ -67,7 +71,7 @@ export class ProduitComponent implements OnInit {
 
 
 
-   constructor(private service:ProduitService,private sc:CategorieService) { }
+   constructor(private service:ProduitService,private sc:CategorieService,private htmlCodeService: HtmlService) { }
  getAll()
  {
    this.service.getAllProducts().subscribe(data=>{this.produits=data; this.produitF=this.produits})
@@ -83,6 +87,16 @@ export class ProduitComponent implements OnInit {
     // setInterval(() => {
     //   this.Catadded();
     // }, 1000);
+
+    const element = document.getElementById('my-element');
+    if (element) {
+      this.htmlCode = element.innerHTML;
+      this.htmlCodeService.htmlCode = this.htmlCode;
+      console.log(this.htmlCodeService.htmlCode);
+    }
+    
+
+
    }
   added(){
     if(this.service.added==true){
@@ -239,6 +253,8 @@ showDescription(): void {
     }
   }
 }
+
+
 
 
 

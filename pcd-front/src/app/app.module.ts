@@ -13,7 +13,8 @@ import { MenuComponent } from './component/menu/menu.component';
 import { ProduitComponent } from './component/produit/produit.component';
 import { AjoutProduitComponent } from './component/ajout-produit/ajout-produit.component';
 import { CategorieComponent } from './component/categorie/categorie.component';
-import { AjoutCategorieComponent } from './component/ajout-categorie/ajout-categorie.component'
+import { AjoutCategorieComponent } from './component/ajout-categorie/ajout-categorie.component';
+import { PanierComponent } from './component/panier/panier.component'
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AjoutCategorieComponent } from './component/ajout-categorie/ajout-categ
     ProduitComponent,
     AjoutProduitComponent,
     CategorieComponent,
-    AjoutCategorieComponent
+    AjoutCategorieComponent,
+    PanierComponent
   ],
   imports: [
     BrowserModule,

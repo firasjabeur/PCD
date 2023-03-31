@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AjoutCategorieComponent } from './component/ajout-categorie/ajout-categorie.component';
 import { AjoutProduitComponent } from './component/ajout-produit/ajout-produit.component';
 import { CategorieComponent } from './component/categorie/categorie.component';
+import { PanierComponent } from './component/panier/panier.component';
 import { ProduitComponent } from './component/produit/produit.component';
 import { HomeComponent } from './pages/home/home.component';
 import { InscriptionComponent } from './pages/inscription/inscription.component';
@@ -36,6 +37,10 @@ const routes: Routes = [
       {
         path: 'ajoutcategorie',
         component: AjoutCategorieComponent
+      },
+      {
+        path: 'panier',
+        component: PanierComponent
       }
 
     ]
